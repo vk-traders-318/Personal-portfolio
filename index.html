@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Website</title>
+  <meta name="description" content="Personal website - About me, Contact, Social Links" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for fallback icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== WORK IN PROGRESS BANNER ========== -->
+  <div class="wip-banner" id="wipBanner">
+    <span>🚧 This website is currently under development. New features and updates will be added soon.</span>
+    <button class="wip-close" onclick="document.getElementById('wipBanner').style.display='none'">✕</button>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-dot"></span>
+      <span id="navName">MyWebsite</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      <li><a href="#social" class="nav-link" data-section="social">Social</a></li>
+      <li><a href="#terms" class="nav-link" data-section="terms">Terms</a></li>
+      <li><a href="#privacy" class="nav-link" data-section="privacy">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== SECTION: HOME ========== -->
+  <section id="home" class="section hero-section">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-container">
+      <!-- Profile Card -->
+      <div class="profile-card animate-fadeUp">
+        <div class="profile-image-wrapper">
+          <img
+            id="profileImage"
+            src="https://via.placeholder.com/160x160/1a1a2e/e2e8f0?text=Photo"
+            alt="Profile Photo"
+            class="profile-image"
+          />
+          <div class="profile-ring"></div>
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-name" id="profileName">Loading...</h1>
+          <p class="profile-bio" id="profileBio">Loading bio...</p>
+          <div class="profile-location" id="profileLocation">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="locationText">Location</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visitor Counter -->
+      <div class="visitor-counter animate-fadeUp delay-1">
+        <div class="counter-card">
+          <div class="counter-icon">👁️</div>
+          <div class="counter-info">
+            <span class="counter-label">Total Visitors</span>
+            <span class="counter-value" id="visitorCount">---</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION: ABOUT ========== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header animate-fadeUp">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-col animate-fadeLeft">
+          <div class="about-img-wrapper">
+            <img
+              id="aboutProfileImage"
+              src="https://via.placeholder.com/400x400/1a1a2e/e2e8f0?text=Photo"
+              alt="About Photo"
+              class="about-image"
+            />
+          </div>
+        </div>
+        <div class="about-content-col animate-fadeRight">
+          <h3 id="aboutName" class="about-name">My Name</h3>
+          <p id="aboutBio" class="about-bio">Loading...</p>
+          <div class="about-details">
+            <div class="detail-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="aboutLocation">Location</span>
+            </div>
+          </div>
+          <div class="about-tags">
+            <span class="tag">Developer</span>
+            <span class="tag">Creator</span>
+            <span class="tag">Learner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION: CONTACT ========== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header animate-fadeUp">
+        <span class="section-tag">Reach Out</span>
+        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+      </div>
+      <div class="contact-cards">
+        <!-- Email Card -->
+        <div class="contact-card animate-fadeUp delay-1" id="emailCard">
+          <div class="contact-icon-wrap">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Email</span>
+            <a class="contact-value" id="contactEmail" href="#">Loading...</a>
+          </div>
+        </div>
+        <!-- Phone Card -->
+        <div class="contact-card animate-fadeUp delay-2" id="phoneCard" style="display:none;">
+          <div class="contact-icon-wrap">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Phone</span>
+            <a class="contact-value" id="contactPhone" href="#">---</a>
+          </div>
+        </div>
+        <!-- WhatsApp Card -->
+        <div class="contact-card animate-fadeUp delay-3" id="whatsappCard" style="display:none;">
+          <div class="contact-icon-wrap whatsapp-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">WhatsApp</span>
+            <a class="contact-value" id="contactWhatsapp" href="#" target="_blank">Chat Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION: SOCIAL ========== -->
+  <section id="social" class="section social-section">
+    <div class="container">
+      <div class="section-header animate-fadeUp">
+        <span class="section-tag">Find Me Online</span>
+        <h2 class="section-title">Social <span class="accent">Links</span></h2>
+      </div>
+      <div class="social-grid" id="socialGrid">
+        <!-- Social cards loaded dynamically from Firebase -->
+        <div class="social-loader">
+          <div class="loader-dot"></div>
+          <div class="loader-dot"></div>
+          <div class="loader-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION: TERMS ========== -->
+  <section id="terms" class="section terms-section">
+    <div class="container">
+      <div class="section-header animate-fadeUp">
+        <span class="section-tag">Legal</span>
+        <h2 class="section-title">Terms of <span class="accent">Use</span></h2>
+      </div>
+      <div class="legal-card animate-fadeUp delay-1">
+        <div class="legal-block">
+          <h3>1. Acceptance of Terms</h3>
+          <p>By accessing and using this website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+        </div>
+        <div class="legal-block">
+          <h3>2. Use of Website</h3>
+          <p>This website is for informational and personal connection purposes only. You agree not to misuse this website or help anyone else to do so.</p>
+        </div>
+        <div class="legal-block">
+          <h3>3. Content</h3>
+          <p>All content on this site is the intellectual property of the site owner unless stated otherwise. Unauthorized reproduction is prohibited.</p>
+        </div>
+        <div class="legal-block">
+          <h3>4. Changes</h3>
+          <p>We reserve the right to change these terms at any time. Continued use of the website implies acceptance of the updated terms.</p>
+        </div>
+        <div class="legal-block">
+          <h3>5. Contact</h3>
+          <p>For any questions regarding these terms, please reach out via the contact section above.</p>
+        </div>
+        <p class="legal-updated">Last updated: 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION: PRIVACY ========== -->
+  <section id="privacy" class="section privacy-section">
+    <div class="container">
+      <div class="section-header animate-fadeUp">
+        <span class="section-tag">Your Data</span>
+        <h2 class="section-title">Privacy <span class="accent">Policy</span></h2>
+      </div>
+      <div class="legal-card animate-fadeUp delay-1">
+        <div class="legal-block">
+          <h3>1. Information We Collect</h3>
+          <p>We may collect basic visitor analytics such as page views and visit counts. No personally identifiable information is collected without your consent.</p>
+        </div>
+        <div class="legal-block">
+          <h3>2. Use of Information</h3>
+          <p>Visitor data is used solely to improve the website experience. We do not sell or share your data with third parties.</p>
+        </div>
+        <div class="legal-block">
+          <h3>3. Cookies</h3>
+          <p>This website may use cookies to enhance user experience. You can disable cookies through your browser settings.</p>
+        </div>
+        <div class="legal-block">
+          <h3>4. Third-Party Services</h3>
+          <p>We use Firebase (Google) and Cloudinary for data storage and media hosting. Their respective privacy policies apply to data handled by these services.</p>
+        </div>
+        <div class="legal-block">
+          <h3>5. Your Rights</h3>
+          <p>You have the right to know what data is collected. Contact us if you wish to request deletion of any data.</p>
+        </div>
+        <p class="legal-updated">Last updated: 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-text">Made with <span class="heart">♥</span> · <span id="footerName">My Website</span></p>
+      <p class="footer-sub">🚧 Under Development</p>
+    </div>
+  </footer>
+
+  <!-- ========== SCROLL TO TOP ========== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ========== FIREBASE SDK ========== -->
+  <!-- 🔴 REPLACE these with your Firebase project config scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+  <!-- JS Files -->
+  <script src="js/firebase.js"></script>
+  <script src="js/cloudinary.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
